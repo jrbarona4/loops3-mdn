@@ -47,7 +47,12 @@
     let btn = document.createElement('button');
     btn.textContent = 'Enter';
     btn.addEventListener("click", function(){
-        
+        if (isPrime(input.value) === true){
+            para.textContent = 'Yes';
+        } else if (isPrime(input.value) === false){
+            para.textContent = 'No';
+        }
+        div.appendChild(para);
     });
     body.appendChild(div);
     div.appendChild(input);
