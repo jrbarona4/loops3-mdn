@@ -48,17 +48,20 @@
     let text = '';
     btn.textContent = 'Enter';
     btn.addEventListener("click", function(){
+      let inputValue = parseInt(input.value);
       do {
-        if (isPrime(input.value) === true){
-
+        if (isPrime(inputValue)){
+          text = text + ' ' + inputValue;
         }
-      } while (i >= 2);
-      div.appendChild(para);  
+        inputValue--;
+      } while (inputValue >= 2);
+      para.textContent = text;
     });
     
     body.appendChild(div);
     div.appendChild(input);
     div.appendChild(btn);
+    div.appendChild(para);
     // Don't edit the code below here!
     const section = document.querySelector('section');
     section.appendChild(para);
